@@ -1,0 +1,59 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  creationTimestamp: null
+  name: manager-role
+rules:
+- apiGroups:
+  - wu123.com.wu123.com
+  resources:
+  - greatdbclusters
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - wu123.com.wu123.com
+  resources:
+  - greatdbclusters/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - wu123.com.wu123.com
+  resources:
+  - greatdbclusters/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - wu123.com.wu123.com
+  resources:
+  - greatdbmonitors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - wu123.com.wu123.com
+  resources:
+  - greatdbmonitors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - wu123.com.wu123.com
+  resources:
+  - greatdbmonitors/status
+  verbs:
+  - get
+  - patch
+  - update

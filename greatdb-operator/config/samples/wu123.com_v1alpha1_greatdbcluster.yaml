@@ -1,0 +1,6 @@
+apiVersion: wu123.com.wu123.com/v1alpha1
+kind: GreatDBCluster
+metadata:
+  name: greatdbcluster-sample
+spec:
+  # TODO(user): Add fields here

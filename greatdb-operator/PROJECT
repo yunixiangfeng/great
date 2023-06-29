@@ -1,0 +1,26 @@
+domain: wu123.com
+layout:
+- go.kubebuilder.io/v3
+multigroup: true
+projectName: greatdb-operator
+repo: greatdb-operator
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: wu123.com
+  group: wu123.com
+  kind: GreatDBCluster
+  path: greatdb-operator/apis/wu123.com/v1alpha1
+  version: v1alpha1
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: wu123.com
+  group: wu123.com
+  kind: GreatDBMonitor
+  path: greatdb-operator/apis/wu123.com/v1alpha1
+  version: v1alpha1
+version: "3"
