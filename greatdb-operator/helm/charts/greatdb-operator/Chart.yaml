@@ -1,0 +1,15 @@
+apiVersion: v1
+description: greatdb-operator Helm chart for Kubernetes
+name: greatdb-operator
+version: v1alpha1
+appVersion: v1alpha1
+home: https://wu123.com
+sources:
+  - https://wu123.com
+keywords:
+  - operator
+  - newsql
+  - database
+  - mysql
+  - mgr
+maintainers:
