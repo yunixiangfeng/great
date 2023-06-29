@@ -1,0 +1,33 @@
+# IT IS NOT SUITABLE FOR PRODUCTION USE.
+# This YAML describes a basic GreatDB cluster with minimum resource requirements,
+# which should be able to run in any Kubernetes cluster with storage support.
+apiVersion: wu123.com/v1alpha1
+kind: GreatDBCluster
+metadata:
+  name: cluster
+spec:
+  version: v5.0.4
+  timezone: UTC
+  pvReclaimPolicy: Retain
+  enableDynamicConfiguration: true
+  configUpdateStrategy: RollingUpdate
+  sqlNode:
+    baseImage: greatopensource/greatdb
+    version: latest
+    replicas: 3
+    service:
+      type: NodePort
+    storageClassName: local-path
+    requests:
+      storage: "5Gi"
+    config: {}
+    enableMetrics: true
+  dataNode:
+    baseImage: greatopensource/greatdb
+    version: latest
+    replicas: 6
+    storageClassName: local-path
+    requests:
+      storage: "5Gi"
+    config: {}
+    enableMetrics: true

@@ -1,0 +1,20 @@
+apiVersion: wu123.com/v1alpha1
+kind: GreatDBMonitor
+metadata:
+  name: monitor
+spec:
+  clusters:
+    - name: cluster
+  prometheus:
+    baseImage: prom/prometheus
+    version: v2.18.1
+  grafana:
+    baseImage: grafana/grafana
+    version: 7.5.5
+  initializer:
+    baseImage: greatdb/greatdb-monitor-init
+    version: v0.0.1
+  reloader:
+    baseImage: pingcap/tidb-monitor-reloader
+    version: v1.0.1
+  imagePullPolicy: IfNotPresent
